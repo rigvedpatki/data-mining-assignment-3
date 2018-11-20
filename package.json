@@ -1,0 +1,27 @@
+{
+  "name": "data-mining-assignment-3",
+  "version": "1.0.0",
+  "description": "Mining Data streams",
+  "main": "./build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rigvedpatki/data-mining-assignment-3.git"
+  },
+  "author": "Rigved Patki <rigved.patki@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rigvedpatki/data-mining-assignment-3/issues"
+  },
+  "homepage": "https://github.com/rigvedpatki/data-mining-assignment-3#readme",
+  "devDependencies": {
+    "@types/google-cloud__storage": "^1.7.2",
+    "@types/node": "^10.12.9",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^2.3.1"
+  }
+}
