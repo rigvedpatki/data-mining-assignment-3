@@ -1,17 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2017",
     "module": "commonjs",
     "lib": ["dom", "es2017", "esnext.asynciterable"],
-    "allowJs": true,
-    "sourceMap": true,
-    "outDir": "./build",
-    "rootDir": "./src",
-    "strict": true,
-    "noUnusedLocals": true,
+    "outDir": "build",
+    "rootDir": "src",
+    "plugins": [
+      {
+        "name": "tslint-language-service"
+      }
+    ],
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "inlineSourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noUnusedLocals": false
   },
-  "include": ["src/**/*"],
-  "exclude": ["build", "node_modules"]
+  "include": ["src"]
 }
