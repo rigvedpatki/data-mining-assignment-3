@@ -19,7 +19,7 @@ import { randomIntInRange } from './lib/reservoir-sampling';
       );
       console.timeLog(`${dataset} -- load-time`);
       console.time(`${dataset} -- parse-file`);
-      const edges = parseEdges(fileContent);
+      const edges = parseEdges(fileContent, dataset);
       console.timeLog(`${dataset} -- parse-file`);
 
       let edges_reservoir = new Array<number[]>();

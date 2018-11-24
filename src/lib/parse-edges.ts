@@ -1,4 +1,4 @@
-const parseEdges = (fileContent: string) => {
+const parseEdges = (fileContent: string, fileName: string) => {
   let edges: number[][] = [];
 
   let lines = fileContent.split('\n');
@@ -6,8 +6,13 @@ const parseEdges = (fileContent: string) => {
   lines = lines.filter(line => !line.startsWith('#'));
 
   lines.forEach(line => {
-    let [to, from] = line.split('\t');
-    edges.push([parseInt(to), parseInt(from)]);
+    if (fileName === 'email-Eu-core.txt') {
+      let [to, from] = line.split(' ');
+      edges.push([parseInt(to), parseInt(from)]);
+    } else {
+      let [to, from] = line.split('\t');
+      edges.push([parseInt(to), parseInt(from)]);
+    }
   });
 
   edges = edges.slice(0, -1);
