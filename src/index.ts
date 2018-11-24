@@ -72,7 +72,7 @@ import { randomIntInRange } from './lib/reservoir-sampling';
         edges_reservoir.every((edgeI, i) => {
           let x = Math.random();
           // console.log(`Comparing value x = ${x} and ${1 / (t + 1)} `);
-          if (x <= 1 / t) {
+          if (x <= 1 / (t + 1)) {
             // console.log(`Edges Reservior Updated ...`);
             update = {
               updated: true,
