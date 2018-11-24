@@ -10,7 +10,7 @@ import * as _ from 'lodash';
   try {
     const fileContent = await getDatasetFromStorage(
       config.BUCKET,
-      config.DATASETS_METADATA[0],
+      config.DATASETS_METADATA[1],
       storage
     );
     const edges = parseEdges(fileContent);
@@ -20,9 +20,9 @@ import * as _ from 'lodash';
       Kt,
       Tt: number = 0;
 
-    edges_reservoir = reservoirSampling(edges, 5000);
+    edges_reservoir = reservoirSampling(edges, 20000);
     // console.log(edges_reservoir);
-    wedges_reservoir = getWedges(edges, edges_reservoir, 5000);
+    wedges_reservoir = getWedges(edges, edges_reservoir, 20000);
     // console.log(wedges_reservoir);
 
     let isClosed = new Array<boolean>(wedges_reservoir.length).fill(false);
@@ -56,7 +56,7 @@ import * as _ from 'lodash';
       edges_reservoir.every((edgeI, i) => {
         let x = Math.random();
         // console.log(`Comparing value x = ${x} and ${1 / (t + 1)} `);
-        if (x <= 1 / (t + 1)) {
+        if (x <= 1 / t) {
           // console.log(`Edges Reservior Updated ...`);
           update = {
             updated: true,
