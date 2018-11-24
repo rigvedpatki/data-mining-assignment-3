@@ -13,7 +13,7 @@ const getWedges = (
         if (b === c && a !== d) {
           if (wedges.length <= limit) {
             wedges.push([a, c, d]);
-            console.log(wedges.length);
+            // console.log(wedges.length);
           } else {
             leave = false;
             return false;
