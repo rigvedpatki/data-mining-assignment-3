@@ -13,7 +13,11 @@ const reservoirSampling = (edges: number[][], k: number) => {
   return reservoir;
 };
 
-const randomIntInRange = (min: number, max: number, inclusive: boolean) => {
+export const randomIntInRange = (
+  min: number,
+  max: number,
+  inclusive: boolean
+) => {
   const range = max - min + (inclusive ? 1 : 0);
   return Math.trunc(Math.random() * range + min);
 };
