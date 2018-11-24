@@ -17,7 +17,7 @@ import * as _ from 'lodash';
     const edges = parseEdges(fileContent);
     let edges_reservoir = new Array<number[]>();
     let wedges_reservoir = new Array<number[]>();
-    let Pt,
+    let P,
       Kt,
       Tt: number = 0;
 
@@ -56,9 +56,9 @@ import * as _ from 'lodash';
       };
       edges_reservoir.every((edgeI, i) => {
         let x = Math.random();
-        // console.log(`Comparing value x = ${x} and ${1 / (t + 1)} `);
+        console.log(`Comparing value x = ${x} and ${1 / (t + 1)} `);
         if (x <= 1 / (t + 1)) {
-          // console.log(`Edges Reservior Updated ...`);
+          console.log(`Edges Reservior Updated ...`);
           update = {
             updated: true,
             index: i,
@@ -70,9 +70,9 @@ import * as _ from 'lodash';
         }
         return true;
       });
-      // console.log(`Updated : ${JSON.stringify(update)}`);
+      console.log(`Updated : ${JSON.stringify(update)}`);
       if (update.updated) {
-        // console.log(`Edges Reservior Updated continuous ...`);
+        console.log(`Edges Reservior Updated continuous ...`);
         //! remove wedges that contain updated edge
         let new_wedges_reservoir = wedges_reservoir.filter(wedge => {
           let [a, b, c] = wedge;
@@ -118,37 +118,16 @@ import * as _ from 'lodash';
     console.log(
       `isClosed : ${isClosed.length} \nisClosed_true : ${isClosed_true.length}`
     );
-    Pt = isClosed_true.length / isClosed.length;
-    Kt = 3 * Pt;
+    P = isClosed_true.length / isClosed.length;
+    Kt = 3 * P;
     Tt =
-      (Math.pow(Pt, 2) /
+      ((P * Math.pow(edges.length, 2)) /
         (edges_reservoir.length * (edges_reservoir.length - 1))) *
       total_wedges;
     console.info(
-      `-----------\n Pt = ${Pt} \n Kt = ${Kt} \n Tt = ${Tt} \n-----------`
+      `-----------\n P = ${P} \n Kt = ${Kt} \n Tt = ${Tt} \n-----------`
     );
   } catch (error) {
     console.log(`Error : ${error}`);
   }
 })();
-
-// edges_reservoir.forEach((edgeT, t) => {
-//   let {
-//     edges_reservoir_updated,
-//     wedges_reservoir_updated,
-//     isClosed_updated,
-//     total_wedges_updated
-//   } = update(
-//     edgeT,
-//     t,
-//     edges_reservoir,
-//     wedges_reservoir,
-//     isClosed,
-//     total_wedges
-//   );
-
-//   edges_reservoir = edges_reservoir_updated;
-//   wedges_reservoir = wedges_reservoir_updated;
-//   isClosed = isClosed_updated;
-//   total_wedges = total_wedges_updated;
-// });
