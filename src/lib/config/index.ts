@@ -9,11 +9,11 @@ export default {
     // 'p2p-Gnutella24.txt',
     // 'p2p-Gnutella25.txt',
     // 'p2p-Gnutella30.txt',
-    // 'p2p-Gnutella31.txt'
-    'amazon0312.txt',
-    'amazon0505.txt',
-    'amazon0601.txt',
+    // 'p2p-Gnutella31.txt',
+    // 'amazon0312.txt',
+    // 'amazon0505.txt',
+    // 'amazon0601.txt',
     'email-Eu-core.txt'
   ],
-  LIMIT: 20000
+  LIMIT: 2500
 };

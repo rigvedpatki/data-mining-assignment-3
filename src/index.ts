@@ -138,11 +138,10 @@ import { randomIntInRange } from './lib/reservoir-sampling';
       P = isClosed_true.length / isClosed.length;
       Kt = 3 * P;
       Tt =
-        ((P * Math.pow(edges.length, 2)) /
-          (edges_reservoir.length * (edges_reservoir.length - 1))) *
-        total_wedges;
+        (P * Math.pow(edges.length, 2) * total_wedges) /
+        (edges_reservoir.length * (edges_reservoir.length - 1));
       console.info(
-        `-----------\n P = ${P} \n Kt = ${Kt} \n Tt = ${Tt} \n-----------`
+        `-----------${dataset}-----------\n P = ${P} \n Kt = ${Kt} \n Tt = ${Tt} \n-----------------------------------`
       );
       console.timeLog(`${dataset}`);
     });
