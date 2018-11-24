@@ -6,7 +6,7 @@ const parseEdges = (fileContent: string) => {
   lines = lines.filter(line => !line.startsWith('#'));
 
   lines.forEach(line => {
-    let [to, from] = line.split(' ');
+    let [to, from] = line.split('\t');
     edges.push([parseInt(to), parseInt(from)]);
   });
 
