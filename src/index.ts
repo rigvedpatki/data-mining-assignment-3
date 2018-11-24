@@ -21,9 +21,9 @@ import * as _ from 'lodash';
       Kt,
       Tt: number = 0;
 
-    edges_reservoir = reservoirSampling(edges, 20000);
+    edges_reservoir = reservoirSampling(edges, 2000);
     console.log(edges_reservoir);
-    wedges_reservoir = getWedges(edges, edges_reservoir, 20000);
+    wedges_reservoir = getWedges(edges, edges_reservoir, 2000);
     console.log(wedges_reservoir);
 
     let isClosed = new Array<boolean>(wedges_reservoir.length).fill(false);
