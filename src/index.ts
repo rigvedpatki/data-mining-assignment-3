@@ -32,7 +32,13 @@ import * as _ from 'lodash';
     console.log(total_wedges);
     edges_reservoir.forEach((edgeT, t) => {
       let [a, b] = edgeT;
+      console.log(`In all Edges, for t = ${t} edge = ${JSON.stringify(edgeT)}`);
       wedges_reservoir.forEach((wedge, i) => {
+        console.log(
+          `In all Reservoir of wedges, for i = ${i} edge = ${JSON.stringify(
+            wedge
+          )}`
+        );
         let [c, d, e] = wedge;
 
         if ((a === c && b === e) || (b === c && a === e)) {
@@ -50,9 +56,9 @@ import * as _ from 'lodash';
       };
       edges_reservoir.every((edgeI, i) => {
         let x = Math.random();
-        console.log(`Comparing value x = ${x} and ${1 / (t + 1)} `);
+        // console.log(`Comparing value x = ${x} and ${1 / (t + 1)} `);
         if (x <= 1 / (t + 1)) {
-          console.log(`Edges Reservior Updated ...`);
+          // console.log(`Edges Reservior Updated ...`);
           update = {
             updated: true,
             index: i,
@@ -64,9 +70,9 @@ import * as _ from 'lodash';
         }
         return true;
       });
-      console.log(`Updated : ${JSON.stringify(update)}`);
+      // console.log(`Updated : ${JSON.stringify(update)}`);
       if (update.updated) {
-        console.log(`Edges Reservior Updated continuous ...`);
+        // console.log(`Edges Reservior Updated continuous ...`);
         //! remove wedges that contain updated edge
         let new_wedges_reservoir = wedges_reservoir.filter(wedge => {
           let [a, b, c] = wedge;
