@@ -3,7 +3,6 @@ import { getDatasetFromStorage, storage } from './lib/storage';
 import parseEdges from './lib/parse-edges';
 import reservoirSampling from './lib/reservoir-sampling';
 import getWedges from './lib/get-wedges';
-// import update from './lib/update';
 import { randomIntInRange } from './lib/reservoir-sampling';
 import * as _ from 'lodash';
 
@@ -42,7 +41,7 @@ import * as _ from 'lodash';
         let [c, d, e] = wedge;
 
         if ((a === c && b === e) || (b === c && a === e)) {
-          console.log(`${a},${b}  : ${c},${d},${e}`);
+          // console.log(`${a},${b}  : ${c},${d},${e}`);
           isClosed[i] = true;
           // console.log(isClosed[i]);
         }
