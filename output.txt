@@ -1,0 +1,14 @@
+Starting for email-Eu-core.txt ...
+email-Eu-core.txt -- load-time: 542.938ms
+email-Eu-core.txt -- parse-file: 27.093ms
+email-Eu-core.txt -- edge-reservoir-sampling: 4.045ms
+email-Eu-core.txt -- wedge-reservoir-sampling: 63.383ms
+email-Eu-core.txt -- algorithm-started: 643.396ms
+isClosed : 2501
+isClosed_true : 279
+-----------email-Eu-core.txt-----------
+ P = 0.11155537784886045
+ Kt = 0.33466613354658137
+ Tt = 29200.706752941176
+-----------------------------------
+email-Eu-core.txt: 1282.499ms
