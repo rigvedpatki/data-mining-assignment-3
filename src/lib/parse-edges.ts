@@ -6,7 +6,10 @@ const parseEdges = (fileContent: string, fileName: string) => {
   lines = lines.filter(line => !line.startsWith('#'));
 
   lines.forEach(line => {
-    if (fileName === 'email-Eu-core.txt') {
+    if (
+      fileName === 'email-Eu-core.txt' ||
+      fileName === 'facebook_combined.txt'
+    ) {
       let [to, from] = line.split(' ');
       edges.push([parseInt(to), parseInt(from)]);
     } else {

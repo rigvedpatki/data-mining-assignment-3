@@ -14,6 +14,8 @@ export default {
     // 'amazon0505.txt',
     // 'amazon0601.txt',
     'email-Eu-core.txt'
+    // 'com-amazon.ungraph.txt',
+    // 'facebook_combined.txt'
   ],
   LIMIT: 2500
 };
